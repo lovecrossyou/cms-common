@@ -1,8 +1,11 @@
 <template>
   <div class="add-article">
-    <el-form ref="form" :model="data" :rules="rules" label-width="80px">
+    <el-form ref="form" :model="data" :rules="rules" label-width="94px">
       <el-form-item label="文章标题" prop="title">
         <el-input v-model="data.title"></el-input>
+      </el-form-item>
+       <el-form-item label="文章副标题" prop="title">
+        <el-input v-model="data.subtitle"></el-input>
       </el-form-item>
       <el-form-item label="文章分类" prop="sort_id">
         <el-cascader :options="sort_data" v-model="sort_id" change-on-select
@@ -13,6 +16,9 @@
       </el-form-item>
       <el-form-item label="作者">
         <el-input readonly="readonly" :value="data.user_name" style="width:217px;opacity: 0.5"></el-input>
+      </el-form-item>
+      <el-form-item label="来源">
+        <el-input readonly="readonly" :value="data.source" style="width:217px;opacity: 0.5"></el-input>
       </el-form-item>
       <el-form-item label="阅读权限" prop="read_type">
         <el-slider v-model="data.read_type" :format-tooltip="formatTooltip" :min="1" :max="4"></el-slider>
@@ -244,7 +250,7 @@ export default {
   }
   .add-article {
     .el-input, .el-textarea__inner, .el-slider {
-      max-width: 60%
+      max-width: 50%
     }
     .el-cascader {
       width: 100%;
