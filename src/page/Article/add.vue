@@ -18,7 +18,7 @@
         <el-input readonly="readonly" :value="data.user_name" style="width:217px;opacity: 0.5"></el-input>
       </el-form-item>
       <el-form-item label="来源">
-        <el-input readonly="readonly" :value="data.source" style="width:217px;opacity: 0.5"></el-input>
+        <el-input :value="data.source" style="width:217px;opacity: 0.5"></el-input>
       </el-form-item>
       <el-form-item label="阅读权限" prop="read_type">
         <el-slider v-model="data.read_type" :format-tooltip="formatTooltip" :min="1" :max="4"></el-slider>
